@@ -1,0 +1,84 @@
+<Window x:Class="CryptoFileGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CryptoFile - ファイル暗号化ソフト" Height="600" Width="800"
+        MinHeight="500" MinWidth="600">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        
+        <!-- タイトル -->
+        <TextBlock Grid.Row="0" Text="🔐 CryptoFile - ファイル暗号化ソフト" 
+                   FontSize="24" FontWeight="Bold" Margin="0,0,0,20" 
+                   HorizontalAlignment="Center"/>
+        
+        <!-- ファイル選択エリア -->
+        <GroupBox Grid.Row="1" Header="📁 ファイル選択" Margin="0,0,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,5,0,10">
+                    <Button Name="btnSelectFiles" Content="ファイル選択" Width="100" Height="30" 
+                            Click="BtnSelectFiles_Click" Margin="0,0,10,0"/>
+                    <Button Name="btnClearFiles" Content="クリア" Width="60" Height="30" 
+                            Click="BtnClearFiles_Click"/>
+                </StackPanel>
+                
+                <ListBox Name="listFiles" Grid.Row="1" Margin="0,0,0,10"/>
+                
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <TextBlock Text="出力フォルダ:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <TextBox Name="txtOutputFolder" Width="300" Height="25" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <Button Name="btnSelectOutputFolder" Content="選択" Width="60" Height="25" 
+                            Click="BtnSelectOutputFolder_Click"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        
+        <!-- パスワード入力 -->
+        <GroupBox Grid.Row="2" Header="🔑 パスワード" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="パスワード:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <PasswordBox Name="pwdPassword" Width="200" Height="25" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <CheckBox Name="chkShowPassword" Content="表示" VerticalAlignment="Center" 
+                         Checked="ChkShowPassword_Checked" Unchecked="ChkShowPassword_Unchecked"/>
+                <TextBox Name="txtPasswordVisible" Width="200" Height="25" VerticalAlignment="Center" 
+                         Visibility="Collapsed" Margin="10,0,0,0"/>
+            </StackPanel>
+        </GroupBox>
+        
+        <!-- 実行ボタン -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <Button Name="btnEncrypt" Content="🔒 暗号化" Width="120" Height="40" 
+                    Click="BtnEncrypt_Click" Margin="0,0,20,0" FontSize="14"/>
+            <Button Name="btnDecrypt" Content="🔓 復号化" Width="120" Height="40" 
+                    Click="BtnDecrypt_Click" FontSize="14"/>
+        </StackPanel>
+        
+        <!-- 進捗表示 -->
+        <StackPanel Grid.Row="4" Margin="0,0,0,10">
+            <ProgressBar Name="progressBar" Height="20" Margin="0,0,0,5"/>
+            <TextBlock Name="lblStatus" Text="準備完了" HorizontalAlignment="Center"/>
+        </StackPanel>
+        
+        <!-- ログ表示 -->
+        <GroupBox Grid.Row="5" Header="📋 ログ">
+            <ScrollViewer>
+                <TextBox Name="txtLog" IsReadOnly="True" TextWrapping="Wrap" 
+                         VerticalScrollBarVisibility="Auto" Background="Black" 
+                         Foreground="Lime" FontFamily="Consolas"/>
+            </ScrollViewer>
+        </GroupBox>
+    </Grid>
+</Window>

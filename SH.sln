@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CryptoFile", "CryptoFile", "{A631913A-5DEE-FE69-A5A8-0D41567F6600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoFileGUI", "CryptoFile\gui_csharp\CryptoFileGUI.csproj", "{D5ED9E1E-ECCA-4DE8-400B-0CFEFBAFE26F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5ED9E1E-ECCA-4DE8-400B-0CFEFBAFE26F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5ED9E1E-ECCA-4DE8-400B-0CFEFBAFE26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5ED9E1E-ECCA-4DE8-400B-0CFEFBAFE26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5ED9E1E-ECCA-4DE8-400B-0CFEFBAFE26F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5ED9E1E-ECCA-4DE8-400B-0CFEFBAFE26F} = {A631913A-5DEE-FE69-A5A8-0D41567F6600}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6631C127-26F9-4305-B4B2-6693CA96C140}
+	EndGlobalSection
+EndGlobal
